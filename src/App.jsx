@@ -16,7 +16,7 @@ function App() {
             })
     }, [])
 
-    return <>Wordle: {word}</>
+    return <>{word ? word : 'fetching...'}</>
 }
 
 export default App
