@@ -19,6 +19,20 @@ function App() {
     // return <>{word ? word : 'fetching...'}</>
 
     const website = 'https://wordle-api.vercel.app/api/wordle'
+    const guess = 'cross'
+
+    useEffect(() => {
+        fetch(website, {
+            method: 'POST',
+            body: { guess },
+        })
+            .then((response) => {
+                return response.json()
+            })
+            .then((data) => {
+                console.log(data)
+            })
+    }, [])
 }
 
 export default App
